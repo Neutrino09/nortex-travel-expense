@@ -36,15 +36,20 @@ chain and the employee chases Finance for two weeks. This app removes all three:
 
 ## Quick start
 
-**One command (Docker):**
+**One command (Docker), on any machine with Docker installed:**
 
 ```bash
-cp .env.example .env          # API keys are optional, see "Environment"
-docker compose up --build     # then open http://localhost:8001
+git clone https://github.com/Neutrino09/nortex-travel-expense.git && cd nortex-travel-expense
+./run.sh                      # macOS / Linux: picks a free port, builds, runs, prints the URL
 ```
 
-The container listens on 8000; compose publishes it on host port **8001** (change the left side of the port mapping in
-`docker-compose.yml` if you prefer another).
+No `.env` and no API key are needed. On Windows (or without the script): `docker compose up --build`, then open
+http://localhost:8000.
+
+**Ports.** The app is on `http://localhost:8000` by default. If that port is busy, `./run.sh` moves to the next free one
+(8001, 8002, …) and prints the URL. To choose one yourself: `HOST_PORT=9000 ./run.sh` or
+`HOST_PORT=9000 docker compose up --build` (PowerShell: `$env:HOST_PORT=9000; docker compose up --build`).
+`./run.sh reset` wipes the demo database first (it re-seeds on start).
 
 **Without Docker** (Python 3.12, Node 20):
 

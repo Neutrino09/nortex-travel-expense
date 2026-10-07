@@ -1,6 +1,6 @@
 # Demo script (3–5 minutes)
 
-Start: `docker compose up --build`, open http://localhost:8001. `APP_TODAY=2026-06-22`.
+Start: `./run.sh` (or `docker compose up --build`) and open the URL it prints (http://localhost:8000 by default). `APP_TODAY=2026-06-22`.
 
 1. **Login as Chaitanya (Employee).** *Say:* "No passwords, a log-in-as picker; every permission is checked on the server." Dashboard: TRQ-2026-0001 at *Trip settlement*. Point at the "Migrated from email — issues found" banner: the advance was over the 60% cap and HoD approval was missing; the app would have caught both.
 2. **Open the settlement → Load sample inbox.** *Say:* "15 emails and 2 receipts, triaged in seconds. The model only extracts; Python decides." Walk the traps: duplicate Uber resend (excluded), failed payment, voucher vs invoice, Deepa's ride, the promo, company-paid flights (memo only), and the hotel folio split, with laundry and minibar disallowed rather than dropped.

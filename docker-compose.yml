@@ -1,11 +1,20 @@
+# Works on any machine with Docker: `docker compose up --build` (no .env needed).
+# Port: http://localhost:8000 by default; if that is taken, use ./run.sh (picks a free one)
+# or `HOST_PORT=9000 docker compose up --build`.
 services:
   app:
     build: .
     ports:
-      - "8001:8000"   # host 8001: port 8000 was taken by another local app
-    env_file: .env            # copy .env.example to .env first
+      - "${HOST_PORT:-8000}:8000"
     environment:
-      PACK_DIR: /app/pack     # overrides the local ../pack in .env
+      # Values come from your shell or a .env file next to this file; the defaults make it run as-is.
+      SESSION_SECRET: ${SESSION_SECRET:-change-me-in-production}
+      APP_TODAY: ${APP_TODAY:-2026-06-22}      # freezes "today" so the June 2026 demo trip isn't late
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}   # keep false on plain http://localhost
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}      # optional: cached extractions cover the sample pack
+      OPENAI_MODEL: ${OPENAI_MODEL:-}
+      PACK_DIR: /app/pack
       DATABASE_URL: sqlite:///./data/app.db
     volumes:
       - ./data:/app/backend/data   # SQLite file + uploaded evidence survive restarts
+    restart: unless-stopped
