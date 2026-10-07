@@ -210,3 +210,6 @@ export const useAudit = (entityType?: string, entityId?: string) =>
       return get<TimelineEvent[]>(`/audit?${q}`)
     },
   })
+
+// Additive helper (Agent C): PATCH with a typed body for callers that manage ids dynamically.
+export const patchJson = <T,>(p: string, b: unknown) => api<T>('PATCH', p, b)

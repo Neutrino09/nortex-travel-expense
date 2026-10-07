@@ -1,0 +1,41 @@
+{
+  "doc_type": "receipt",
+  "merchant": "IndiGo",
+  "bill_no": null,
+  "date": "2026-06-11",
+  "time": null,
+  "currency": "INR",
+  "total": 10556.0,
+  "payment_method": "corporate_card",
+  "person_name": "Chaitanya Reddy",
+  "is_forwarded": false,
+  "forwarded_by": null,
+  "from_place": null,
+  "to_place": null,
+  "check_in": null,
+  "check_out": null,
+  "nights": null,
+  "covers": null,
+  "line_items": [
+    {
+      "date": "2026-06-16",
+      "description": "Pune - Bengaluru, IndiGo 6E-6284 07:55 PNQ-09:30 BLR",
+      "amount": 5016.0
+    },
+    {
+      "date": "2026-06-20",
+      "description": "Bengaluru - Pune, IndiGo 6E-6491 19:15 BLR-20:55 PNQ",
+      "amount": 5540.0
+    }
+  ],
+  "taxes": [
+    {
+      "label": "Taxes & fees (first sector)",
+      "rate_pct": null,
+      "amount": 896.0
+    }
+  ],
+  "context_note": "PNR QK4TZ9, booking NF9119735",
+  "_filename": "04_flight_eticket.eml",
+  "_source": "handwritten-fixture"
+}

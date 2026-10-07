@@ -1,0 +1,66 @@
+{
+  "doc_type": "tax_invoice",
+  "merchant": "Keys Prime Whitefield",
+  "bill_no": "KPW/26-27/1188",
+  "date": "2026-06-19",
+  "time": null,
+  "currency": "INR",
+  "total": 21504.0,
+  "payment_method": "personal_card",
+  "person_name": "Chaitanya Reddy",
+  "is_forwarded": false,
+  "forwarded_by": null,
+  "from_place": null,
+  "to_place": null,
+  "check_in": "2026-06-16",
+  "check_out": "2026-06-19",
+  "nights": 3,
+  "covers": null,
+  "line_items": [
+    {
+      "date": "2026-06-16",
+      "description": "Room Charge",
+      "amount": 5750.0
+    },
+    {
+      "date": "2026-06-17",
+      "description": "Room Charge",
+      "amount": 5750.0
+    },
+    {
+      "date": "2026-06-17",
+      "description": "Laundry",
+      "amount": 450.0
+    },
+    {
+      "date": "2026-06-18",
+      "description": "Room Charge",
+      "amount": 5750.0
+    },
+    {
+      "date": "2026-06-18",
+      "description": "Mini Bar",
+      "amount": 380.0
+    },
+    {
+      "date": "2026-06-18",
+      "description": "In Room Dining",
+      "amount": 1120.0
+    }
+  ],
+  "taxes": [
+    {
+      "label": "CGST",
+      "rate_pct": 6.0,
+      "amount": 1152.0
+    },
+    {
+      "label": "SGST",
+      "rate_pct": 6.0,
+      "amount": 1152.0
+    }
+  ],
+  "context_note": null,
+  "_filename": "hotel_invoice_1188.png",
+  "_source": "handwritten-fixture"
+}

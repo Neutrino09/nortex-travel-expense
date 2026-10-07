@@ -1,0 +1,41 @@
+{
+  "doc_type": "booking_confirmation",
+  "merchant": "Keys Prime Hotel, Whitefield",
+  "bill_no": "NH8095495",
+  "date": "2026-06-11",
+  "time": null,
+  "currency": "INR",
+  "total": 19320.0,
+  "payment_method": "pay_at_property",
+  "person_name": "Chaitanya Reddy",
+  "is_forwarded": false,
+  "forwarded_by": null,
+  "from_place": null,
+  "to_place": null,
+  "check_in": "2026-06-16",
+  "check_out": "2026-06-19",
+  "nights": 3,
+  "covers": null,
+  "line_items": [
+    {
+      "date": null,
+      "description": "Tariff per night",
+      "amount": 5750.0
+    },
+    {
+      "date": null,
+      "description": "Total room charges",
+      "amount": 17250.0
+    }
+  ],
+  "taxes": [
+    {
+      "label": "GST",
+      "rate_pct": 12.0,
+      "amount": 2070.0
+    }
+  ],
+  "context_note": null,
+  "_filename": "05_hotel_voucher.eml",
+  "_source": "handwritten-fixture"
+}

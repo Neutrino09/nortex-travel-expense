@@ -1,0 +1,56 @@
+{
+  "doc_type": "other",
+  "merchant": "Keys Prime Whitefield",
+  "bill_no": "KPW/26-27/1188",
+  "date": "2026-06-19",
+  "time": null,
+  "currency": "INR",
+  "total": 21504.0,
+  "payment_method": "personal_card",
+  "person_name": "Chaitanya Reddy",
+  "is_forwarded": false,
+  "forwarded_by": null,
+  "from_place": null,
+  "to_place": null,
+  "check_in": "2026-06-16",
+  "check_out": "2026-06-19",
+  "nights": 3,
+  "covers": null,
+  "line_items": [
+    {
+      "date": null,
+      "description": "Room charges",
+      "amount": 17250.0
+    },
+    {
+      "date": null,
+      "description": "Laundry",
+      "amount": 450.0
+    },
+    {
+      "date": null,
+      "description": "Mini bar",
+      "amount": 380.0
+    },
+    {
+      "date": null,
+      "description": "In-room dining",
+      "amount": 1120.0
+    }
+  ],
+  "taxes": [
+    {
+      "label": "CGST",
+      "rate_pct": 6.0,
+      "amount": 1152.0
+    },
+    {
+      "label": "SGST",
+      "rate_pct": 6.0,
+      "amount": 1152.0
+    }
+  ],
+  "context_note": "Folio KPW/26-27/1188, settled by guest on card",
+  "_filename": "12_hotel_invoice.eml",
+  "_source": "handwritten-fixture"
+}

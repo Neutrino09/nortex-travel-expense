@@ -9,6 +9,7 @@ from starlette.middleware.sessions import SessionMiddleware
 
 from . import db
 from .config import get_settings
+from . import import_router
 from .routers import approvals, auth, evidence, finance, requests, settlements
 from .seed import seed_if_empty
 
@@ -27,7 +28,8 @@ app = FastAPI(title="Nortex Travel Expense", lifespan=lifespan)
 app.add_middleware(SessionMiddleware, secret_key=get_settings().session_secret,
                    same_site="lax", https_only=get_settings().cookie_secure)  # COOKIE_SECURE=true on Render
 
-for r in (auth.router, requests.router, settlements.router, approvals.router,
+# import_router first: it owns the two import endpoints, so the stubs in settlements.py never match
+for r in (auth.router, import_router.router, requests.router, settlements.router, approvals.router,
           finance.router, evidence.router):
     app.include_router(r, prefix="/api")
 
