@@ -1,0 +1,17 @@
+# Render Blueprint: New + > Blueprint > pick this repo. Builds the Dockerfile and starts the app.
+services:
+  - type: web
+    name: nortex-travel-expense
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: SESSION_SECRET
+        generateValue: true       # Render creates a random secret
+      - key: APP_TODAY
+        value: "2026-06-22"       # freezes "today" so the June 2026 demo trip isn't late
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: PACK_DIR
+        value: /app/pack
+      # OPENAI_API_KEY / OPENAI_MODEL intentionally not set: cached extractions cover the sample pack
