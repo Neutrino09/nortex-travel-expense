@@ -188,7 +188,7 @@ export function SettlementBody({ sid, reviewMode }: { sid: number; reviewMode?: 
           <b>Returned for changes.</b> {returnedRemark.remarks ? `“${returnedRemark.remarks}”` : ''} Fix the items below and resubmit.
         </Card>
       )}
-      <div className="grid gap-4 2xl:grid-cols-[minmax(0,1fr)_340px]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 2xl:grid-cols-[minmax(0,1fr)_340px]">
         <div className="space-y-4">
           {editable && (
             <Card className="space-y-3">
