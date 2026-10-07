@@ -1,5 +1,5 @@
 import { LayoutDashboard, FileText, CheckSquare, Landmark } from 'lucide-react'
-import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { useInbox, useLogout, useMe } from '@/api/client'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -25,6 +25,7 @@ export default function AppShell() {
   const me = useMe()
   const logout = useLogout()
   const navigate = useNavigate()
+  const reviewing = /^\/(approvals|finance)/.test(useLocation().pathname)  // someone else's items
   const u = me.data
   if (!u) return null
   const initials = u.name.split(' ').map((p) => p[0]).slice(0, 2).join('')
@@ -41,7 +42,9 @@ export default function AppShell() {
       </aside>
       <div className="min-w-0 flex-1">
         <header className="flex items-center justify-between border-b border-border bg-white px-6 py-3">
-          <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-primary">● You're viewing your own claims</span>
+          <span className={`rounded-full px-3 py-1 text-xs font-medium ${reviewing ? 'bg-blue-50 text-blue-800' : 'bg-green-50 text-primary'}`}>
+            {reviewing ? "● You're reviewing other people's items" : "● You're viewing your own claims"}
+          </span>
           <div className="flex items-center gap-3">
             <Badge tone="blue">{roleLabel[u.app_role]}</Badge>
             <span className="text-sm font-medium">{u.name}</span>
