@@ -3,7 +3,7 @@
   "merchant": "Keys Prime Hotel, Whitefield",
   "bill_no": "NH8095495",
   "date": "2026-06-11",
-  "time": null,
+  "time": "09:51",
   "currency": "INR",
   "total": 19320.0,
   "payment_method": "pay_at_property",
@@ -19,11 +19,6 @@
   "line_items": [
     {
       "date": null,
-      "description": "Tariff per night",
-      "amount": 5750.0
-    },
-    {
-      "date": null,
       "description": "Total room charges",
       "amount": 17250.0
     }
@@ -35,7 +30,6 @@
       "amount": 2070.0
     }
   ],
-  "context_note": null,
-  "_filename": "05_hotel_voucher.eml",
-  "_source": "handwritten-fixture"
+  "context_note": "Superior King, Room Only; booking via MakeMyTrip.",
+  "_filename": "05_hotel_voucher.eml"
 }

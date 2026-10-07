@@ -7,7 +7,7 @@
   "currency": "INR",
   "total": 640.0,
   "payment_method": "unknown",
-  "person_name": "Deepa",
+  "person_name": "Deepa Nair",
   "is_forwarded": true,
   "forwarded_by": "Deepa Nair",
   "from_place": "Guindy, Chennai",
@@ -16,9 +16,14 @@
   "check_out": null,
   "nights": null,
   "covers": null,
-  "line_items": [],
+  "line_items": [
+    {
+      "date": "2026-05-12",
+      "description": "Uber ride",
+      "amount": 640.0
+    }
+  ],
   "taxes": [],
-  "context_note": null,
-  "_filename": "13_colleague_forward.eml",
-  "_source": "handwritten-fixture"
+  "context_note": "Email says Deepa forgot to claim this ride from the Chennai trip and will settle with Chaitanya offline.",
+  "_filename": "13_colleague_forward.eml"
 }

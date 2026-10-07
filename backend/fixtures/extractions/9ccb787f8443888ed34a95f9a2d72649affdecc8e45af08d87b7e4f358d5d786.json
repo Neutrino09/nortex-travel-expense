@@ -2,11 +2,11 @@
   "doc_type": "tax_invoice",
   "merchant": "Keys Prime Whitefield",
   "bill_no": "KPW/26-27/1188",
-  "date": "2026-06-19",
+  "date": null,
   "time": null,
   "currency": "INR",
   "total": 21504.0,
-  "payment_method": "personal_card",
+  "payment_method": "unknown",
   "person_name": "Chaitanya Reddy",
   "is_forwarded": false,
   "forwarded_by": null,
@@ -60,7 +60,6 @@
       "amount": 1152.0
     }
   ],
-  "context_note": null,
-  "_filename": "hotel_invoice_1188.png",
-  "_source": "handwritten-fixture"
+  "context_note": "Company: Nortex Industries Ltd. Room 412 Superior King. Settled by guest, card ****2288. Balance due: 0.00.",
+  "_filename": "hotel_invoice_1188.png"
 }

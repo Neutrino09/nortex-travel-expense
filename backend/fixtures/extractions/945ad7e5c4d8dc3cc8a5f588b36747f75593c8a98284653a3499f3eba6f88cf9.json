@@ -3,22 +3,32 @@
   "merchant": null,
   "bill_no": null,
   "date": "2026-06-08",
-  "time": null,
+  "time": "18:40",
   "currency": "INR",
-  "total": null,
+  "total": 20000.0,
   "payment_method": "unknown",
   "person_name": null,
   "is_forwarded": false,
   "forwarded_by": null,
   "from_place": null,
-  "to_place": null,
-  "check_in": null,
-  "check_out": null,
-  "nights": null,
+  "to_place": "Bengaluru",
+  "check_in": "2026-06-16",
+  "check_out": "2026-06-20",
+  "nights": 4,
   "covers": null,
-  "line_items": [],
+  "line_items": [
+    {
+      "date": null,
+      "description": "Travel advance",
+      "amount": 20000.0
+    },
+    {
+      "date": null,
+      "description": "Hotel limit per night",
+      "amount": 6000.0
+    }
+  ],
   "taxes": [],
-  "context_note": "Approved by Suresh Iyer; keep hotel within 6000/night",
-  "_filename": "02_travel_approval_granted.eml",
-  "_source": "handwritten-fixture"
+  "context_note": "Travel approved; hotel to remain within the ₹6,000 per night limit. Ravi was asked to process the advance.",
+  "_filename": "02_travel_approval_granted.eml"
 }

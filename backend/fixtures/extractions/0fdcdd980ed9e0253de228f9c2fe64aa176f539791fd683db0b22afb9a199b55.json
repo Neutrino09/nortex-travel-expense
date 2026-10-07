@@ -3,7 +3,7 @@
   "merchant": "MakeMyTrip",
   "bill_no": null,
   "date": "2026-06-19",
-  "time": null,
+  "time": "07:00",
   "currency": "INR",
   "total": null,
   "payment_method": "unknown",
@@ -18,7 +18,6 @@
   "covers": null,
   "line_items": [],
   "taxes": [],
-  "context_note": null,
-  "_filename": "14_promo_noise.eml",
-  "_source": "handwritten-fixture"
+  "context_note": "Hotel offer: code MONSOON30, up to INR 6,000 off; valid till 2026-06-21.",
+  "_filename": "14_promo_noise.eml"
 }

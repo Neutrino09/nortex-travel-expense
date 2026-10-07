@@ -1,12 +1,12 @@
 {
   "doc_type": "receipt",
-  "merchant": "Spice Terrace",
+  "merchant": "SPICE TERRACE",
   "bill_no": "4471",
   "date": "2026-06-18",
   "time": "21:38",
   "currency": "INR",
   "total": 2255.0,
-  "payment_method": "personal_card",
+  "payment_method": "unknown",
   "person_name": null,
   "is_forwarded": false,
   "forwarded_by": null,
@@ -19,27 +19,27 @@
   "line_items": [
     {
       "date": null,
-      "description": "Paneer Tikka x2",
+      "description": "2 x Paneer Tikka",
       "amount": 760.0
     },
     {
       "date": null,
-      "description": "Andhra Chicken",
+      "description": "1 x Andhra Chicken",
       "amount": 420.0
     },
     {
       "date": null,
-      "description": "Butter Naan x4",
+      "description": "4 x Butter Naan",
       "amount": 320.0
     },
     {
       "date": null,
-      "description": "Dal Makhani",
+      "description": "1 x Dal Makhani",
       "amount": 310.0
     },
     {
       "date": null,
-      "description": "Fresh Lime Soda x2",
+      "description": "2 x Fresh Lime Soda",
       "amount": 240.0
     }
   ],
@@ -53,9 +53,13 @@
       "label": "SGST",
       "rate_pct": 2.5,
       "amount": 51.25
+    },
+    {
+      "label": "Service Charge",
+      "rate_pct": 5.0,
+      "amount": 102.5
     }
   ],
-  "context_note": null,
-  "_filename": "dinner_bill_18jun.png",
-  "_source": "handwritten-fixture"
+  "context_note": "Paid by card ending 2288.",
+  "_filename": "dinner_bill_18jun.png"
 }

@@ -1,9 +1,9 @@
 {
-  "doc_type": "other",
+  "doc_type": "tax_invoice",
   "merchant": "Keys Prime Whitefield",
   "bill_no": "KPW/26-27/1188",
   "date": "2026-06-19",
-  "time": null,
+  "time": "11:20",
   "currency": "INR",
   "total": 21504.0,
   "payment_method": "personal_card",
@@ -50,7 +50,6 @@
       "amount": 1152.0
     }
   ],
-  "context_note": "Folio KPW/26-27/1188, settled by guest on card",
-  "_filename": "12_hotel_invoice.eml",
-  "_source": "handwritten-fixture"
+  "context_note": "Settled by guest using HDFC Credit Card ending 2288.",
+  "_filename": "12_hotel_invoice.eml"
 }

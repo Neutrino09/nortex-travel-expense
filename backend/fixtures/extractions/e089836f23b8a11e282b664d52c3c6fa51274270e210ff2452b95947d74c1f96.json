@@ -3,22 +3,32 @@
   "merchant": null,
   "bill_no": null,
   "date": "2026-06-08",
-  "time": null,
+  "time": "11:12",
   "currency": "INR",
   "total": 48000.0,
   "payment_method": "unknown",
-  "person_name": null,
+  "person_name": "Chaitanya Reddy",
   "is_forwarded": false,
   "forwarded_by": null,
-  "from_place": null,
-  "to_place": null,
-  "check_in": null,
-  "check_out": null,
-  "nights": null,
+  "from_place": "Pune",
+  "to_place": "Bengaluru",
+  "check_in": "2026-06-16",
+  "check_out": "2026-06-20",
+  "nights": 4,
   "covers": null,
-  "line_items": [],
+  "line_items": [
+    {
+      "date": null,
+      "description": "Estimated spend",
+      "amount": 48000.0
+    },
+    {
+      "date": null,
+      "description": "Advance requested",
+      "amount": 20000.0
+    }
+  ],
   "taxes": [],
-  "context_note": "Travel approval request, Bengaluru 16-20 Jun, advance INR 20,000",
-  "_filename": "01_travel_approval_request.eml",
-  "_source": "handwritten-fixture"
+  "context_note": "Travel approval request for customer meeting and site visit; travel dates 16–20 Jun 2026. Domestic Tier 1 city; flight return. Cost centre CE110.",
+  "_filename": "01_travel_approval_request.eml"
 }

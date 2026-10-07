@@ -7,7 +7,7 @@
   "currency": "INR",
   "total": 1415.02,
   "payment_method": "personal_card",
-  "person_name": "Chaitanya",
+  "person_name": "Chaitanya Reddy",
   "is_forwarded": false,
   "forwarded_by": null,
   "from_place": "Baner, Pune",
@@ -18,12 +18,12 @@
   "covers": null,
   "line_items": [
     {
-      "date": null,
+      "date": "2026-06-16",
       "description": "Trip fare",
       "amount": 1229.0
     },
     {
-      "date": null,
+      "date": "2026-06-16",
       "description": "Airport surcharge",
       "amount": 96.0
     }
@@ -35,7 +35,6 @@
       "amount": 90.02
     }
   ],
-  "context_note": null,
-  "_filename": "06_uber_receipt_1.eml",
-  "_source": "handwritten-fixture"
+  "context_note": "20% off up to INR 150 on next Reserve Airport Pick up ride.",
+  "_filename": "06_uber_receipt_1.eml"
 }
