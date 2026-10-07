@@ -2,7 +2,7 @@ services:
   app:
     build: .
     ports:
-      - "8000:8000"
+      - "8001:8000"   # host 8001: port 8000 was taken by another local app
     env_file: .env            # copy .env.example to .env first
     environment:
       PACK_DIR: /app/pack     # overrides the local ../pack in .env

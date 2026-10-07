@@ -11,7 +11,7 @@ expense policy on every line, routes it through the approval chain to Finance, a
 
 ```bash
 cp .env.example .env          # optional keys; the app runs fully without them (see below)
-docker compose up --build     # http://localhost:8000
+docker compose up --build     # http://localhost:8001 (container port 8000; change the left side in docker-compose.yml)
 ```
 
 Local dev without Docker:
