@@ -9,3 +9,44 @@
 }
 
 body { @apply bg-zinc-50 text-zinc-900 antialiased; font-family: ui-sans-serif, system-ui, sans-serif; }
+
+/* ---- Dark mode ----
+   Toggled by the `dark` class on <html> (see lib/theme.ts). Components keep their light-mode Tailwind
+   classes; this block re-maps the handful of palette classes they use, so no component changes. */
+:root { color-scheme: light; }
+.dark { color-scheme: dark; --color-muted: #27272a; --color-muted-foreground: #a1a1aa; --color-border: #3f3f46; }
+.dark body { background: #09090b; color: #fafafa; }
+
+/* surfaces */
+.dark .bg-white { background-color: #18181b; }
+.dark .bg-zinc-50 { background-color: #1f1f23; }
+.dark .bg-zinc-100 { background-color: #27272a; }
+.dark .bg-zinc-200 { background-color: #3f3f46; }
+.dark .hover\:bg-zinc-50:hover, .dark .hover\:bg-zinc-100:hover { background-color: #27272a; }
+
+/* text */
+.dark .text-zinc-900, .dark .hover\:text-zinc-900:hover { color: #fafafa; }
+.dark .text-zinc-600, .dark .text-zinc-500 { color: #a1a1aa; }
+.dark .text-zinc-400 { color: #8b8b94; }
+.dark .text-zinc-300 { color: #63636b; }
+.dark .text-primary { color: #4ade80; }
+
+/* borders */
+.dark .border-zinc-300 { border-color: #52525b; }
+.dark .border-zinc-200, .dark .border-zinc-100 { border-color: #3f3f46; }
+.dark .divide-zinc-100 > :not(:last-child) { border-color: #3f3f46; }
+.dark .border-amber-300 { border-color: rgba(245, 158, 11, 0.45); }
+
+/* status tints (badges, banners, findings) */
+.dark .bg-green-50 { background-color: rgba(34, 197, 94, 0.12); }
+.dark .bg-green-100 { background-color: rgba(34, 197, 94, 0.2); }
+.dark .bg-red-100 { background-color: rgba(239, 68, 68, 0.2); }
+.dark .bg-amber-50 { background-color: rgba(245, 158, 11, 0.12); }
+.dark .bg-amber-100 { background-color: rgba(245, 158, 11, 0.2); }
+.dark .bg-blue-50 { background-color: rgba(59, 130, 246, 0.14); }
+.dark .bg-blue-100 { background-color: rgba(59, 130, 246, 0.22); }
+.dark .text-green-700, .dark .text-green-800, .dark .text-green-900 { color: #86efac; }
+.dark .text-red-600, .dark .text-red-700, .dark .text-red-800, .dark .hover\:text-red-600:hover { color: #fca5a5; }
+.dark .text-amber-700, .dark .text-amber-800, .dark .text-amber-900 { color: #fcd34d; }
+.dark .text-blue-800 { color: #93c5fd; }
+.dark input::placeholder, .dark textarea::placeholder { color: #71717a; }

@@ -79,13 +79,13 @@ function LineRow({ line, findings, evidence, editable, onPatch, onDelete, onAtte
           )}
         </Td>
         <Td className="w-36">
-          <Select value={line.head} disabled={!editable}
+          <Select className="min-w-40" value={line.head} disabled={!editable}
             onChange={(e) => { const h = HEADS.find((x) => x.id === e.target.value)!; onPatch({ head: h.id, section: h.section }) }}>
             {HEADS.map((h) => <option key={h.id} value={h.id}>{h.label}</option>)}
           </Select>
         </Td>
         <Td className="w-28">
-          <Select value={line.paid_by} disabled={!editable} onChange={(e) => onPatch({ paid_by: e.target.value as 'Employee' | 'Company' })}>
+          <Select className="min-w-28" value={line.paid_by} disabled={!editable} onChange={(e) => onPatch({ paid_by: e.target.value as 'Employee' | 'Company' })}>
             <option>Employee</option><option>Company</option>
           </Select>
         </Td>
@@ -188,7 +188,7 @@ export function SettlementBody({ sid, reviewMode }: { sid: number; reviewMode?: 
           <b>Returned for changes.</b> {returnedRemark.remarks ? `“${returnedRemark.remarks}”` : ''} Fix the items below and resubmit.
         </Card>
       )}
-      <div className="grid gap-4 lg:grid-cols-[1fr_340px]">
+      <div className="grid gap-4 2xl:grid-cols-[minmax(0,1fr)_340px]">
         <div className="space-y-4">
           {editable && (
             <Card className="space-y-3">
@@ -226,7 +226,7 @@ export function SettlementBody({ sid, reviewMode }: { sid: number; reviewMode?: 
                   <h3 className="text-sm font-semibold">{sec.label}</h3>
                   {editable && <Button variant="outline" onClick={() => addIn(sec.id, sec.defaultHead)}>+ Add line</Button>}
                 </div>
-                <Table>
+                <Table className="min-w-[1200px]">
                   <thead><tr>
                     <Th>Date</Th><Th>Time</Th><Th>Description / From → To / Hotel</Th><Th>Head</Th><Th>Paid by</Th>
                     <Th className="text-right">Amount</Th><Th className="text-right">Disallowed</Th><Th>Proof ref</Th><Th />
@@ -248,7 +248,7 @@ export function SettlementBody({ sid, reviewMode }: { sid: number; reviewMode?: 
           {reviewMode && <Timeline events={s.timeline} />}
         </div>
 
-        <div className="lg:sticky lg:top-4 lg:self-start">
+        <div className="order-first 2xl:order-none 2xl:sticky 2xl:top-4 2xl:self-start">
           <div className="space-y-4">
             <SummaryCard summary={summary} chain={chain} payout={payout}>
               {editable && (

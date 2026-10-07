@@ -1,8 +1,10 @@
-import { LayoutDashboard, FileText, CheckSquare, Landmark } from 'lucide-react'
+import { LayoutDashboard, FileText, CheckSquare, Landmark, Moon, Sun } from 'lucide-react'
+import { useState } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { useInbox, useLogout, useMe } from '@/api/client'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { isDark, setDark } from '@/lib/theme'
 import ToastHost from './ToastHost'
 
 const link = ({ isActive }: { isActive: boolean }) =>
@@ -25,6 +27,7 @@ export default function AppShell() {
   const me = useMe()
   const logout = useLogout()
   const navigate = useNavigate()
+  const [dark, setDarkState] = useState(isDark())
   const reviewing = /^\/(approvals|finance)/.test(useLocation().pathname)  // someone else's items
   const u = me.data
   if (!u) return null
@@ -49,10 +52,15 @@ export default function AppShell() {
             <Badge tone="blue">{roleLabel[u.app_role]}</Badge>
             <span className="text-sm font-medium">{u.name}</span>
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-semibold text-white">{initials}</span>
+            <Button variant="outline" aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={dark ? 'Light mode' : 'Dark mode'}
+              onClick={() => { setDark(!dark); setDarkState(!dark) }}>
+              {dark ? <Sun size={16} /> : <Moon size={16} />}
+            </Button>
             <Button variant="outline" onClick={() => logout.mutate(undefined, { onSuccess: () => navigate('/login') })}>Switch user</Button>
           </div>
         </header>
-        <main className="mx-auto max-w-6xl p-6"><Outlet /></main>
+        <main className="mx-auto max-w-[1500px] p-6"><Outlet /></main>
       </div>
       <ToastHost />
     </div>

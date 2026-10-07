@@ -26,11 +26,11 @@ unit-tested code, and the employee reviews every line before submitting. Validat
 ## What I built
 - FastAPI + SQLModel backend, React/Vite/Tailwind frontend, one Docker image.
 - Ingestion: .eml and image import, cached LLM extraction, deterministic triage into used / excluded / ignored with reason and policy clause, hotel folio split with reconciliation.
-- Policy engine (rules, approval chain, payment runs), a single audited state machine, and the Employee, Manager and Finance screens.
+- Policy engine (rules, approval chain, payment runs), a single audited state machine, and the Employee, Manager and Finance screens (with a light/dark toggle).
 - Tests: chain table, every rule, payment dates, workflow invariants, the golden sample-pack import (offline), and the full HTTP happy path.
 
 ## What I deliberately left out
-Real mailbox connection, passwords/SSO, notifications, a policy-editing UI, multi-currency, payroll or bank integration, Postgres/migrations, OCR without an LLM, PDF export, mobile polish, dark mode, global search, a pre-trip HoD approval workflow for entertainment (reference field and warning only), and multiple settlements per request.
+Real mailbox connection, passwords/SSO, notifications, a policy-editing UI, multi-currency, payroll or bank integration, Postgres/migrations, OCR without an LLM, PDF export, mobile polish, global search, a pre-trip HoD approval workflow for entertainment (reference field and warning only), and multiple settlements per request.
 
 ## Where it breaks
 - Extraction can misread a damaged photo. Reconciliation catches the pack's folded folio, not every case; the employee is the final check.
