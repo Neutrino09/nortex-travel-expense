@@ -13,7 +13,7 @@ My principle: **the LLM proposes, deterministic Python decides, the human confir
 - Chaitanya's lodging is Employee-borne (voucher says "Pay at Hotel", folio on his personal card), so his advance cap is ₹19,800.
 - A returned item is resubmitted under the same TRQ id: revision +1, chain rebuilt from level 1.
 - Payment run is the first 10th or 25th on or after verification. Tax on a room above the cap is still reimbursed (§3.1 read literally); tax on a disallowed item goes with it.
-- Duplicates match on merchant + bill number, or merchant + date + time + amount when there is no bill number (Uber), across all employees.
+- Duplicates match on merchant + bill number, or merchant + date + time + amount when there is no bill number (Uber), across all employees. Lines from the same document are not compared with each other.
 - Late submission is a warning, not a block. Tier 2 is the user's choice, since the policy lists no Tier 2 cities. In-room dining counts as a meal.
 - Sample-pack extractions are cached, so tests and the demo work offline. Login is a "log in as" picker with fully server-side authorization.
 
@@ -30,6 +30,5 @@ Real mailbox connection, SSO, notifications, a policy-editing UI, multi-currency
 - **Extraction.** A model can misread a damaged photo. Checking the folio against the invoice total and the booking voucher catches the pack's fold, not every case; the employee is the final check.
 - **Name matching** for "someone else's expense" uses first and full name, so a colleague with the same first name would slip through.
 - **No Tier 2 list**, so non-Tier-1 tiers depend on the user.
-- **Top of the chain.** The MD's own claims have no approver above them, so only Finance verifies (a request with no approver auto-approves, which I added). Kavitha can appear twice in Ravi's chain; separation of duties only means "not yourself".
-- **Beyond the spec:** a corporate-card booking confirmation is treated as a paid ticket, and lines from one document are not flagged as duplicates of each other.
+- **Top of the chain.** The MD's own claims have no approver above them, so only Finance verifies. Kavitha can appear twice in Ravi's chain; separation of duties only means "not yourself".
 - **Storage.** SQLite and local files reset on Render's free tier; production needs Postgres and object storage.
