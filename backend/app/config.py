@@ -33,6 +33,7 @@ class Settings:
     openai_model: str
     app_today: str
     session_secret: str
+    cookie_secure: bool
     database_url: str
     pack_dir: Path
     fixtures_dir: Path
@@ -49,6 +50,7 @@ def get_settings() -> Settings:
         openai_model=os.environ.get("OPENAI_MODEL", ""),
         app_today=os.environ.get("APP_TODAY", ""),
         session_secret=os.environ.get("SESSION_SECRET", "change-me"),
+        cookie_secure=os.environ.get("COOKIE_SECURE", "false").strip().lower() in ("1", "true", "yes"),
         database_url=db_url,
         pack_dir=_resolve(os.environ.get("PACK_DIR", "../pack")),
         fixtures_dir=BACKEND_DIR / "fixtures" / "extractions",

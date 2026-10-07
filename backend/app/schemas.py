@@ -1,6 +1,7 @@
 """THE API CONTRACT (CLAUDE.md §11). Mirrored exactly in frontend/src/api/types.ts.
-FROZEN after phase 1 — only the main agent edits this. Money = integer paise. Dates = ISO strings."""
-from datetime import date as Date, datetime
+FROZEN after phase 1 — only the main agent edits this. Money = integer paise. dt.dates = ISO strings."""
+import datetime as dt
+from datetime import datetime
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -87,7 +88,7 @@ class TimelineEvent(BaseModel):
 
 class ExpectedPayout(BaseModel):
     amount_paise: int
-    run_date: Date
+    run_date: dt.date
     estimated: bool  # true until the settlement is verified
     kind: Literal["payout", "recovery"]
 
@@ -97,7 +98,7 @@ class PaymentOut(BaseModel):
     settlement_id: int
     kind: Literal["payout", "recovery"]
     amount_paise: int
-    run_date: Date
+    run_date: dt.date
     status: Literal["scheduled", "paid", "payroll_deduction"]
     paid_at: datetime | None
     # joined for the Finance "Payment runs" tab
@@ -132,8 +133,8 @@ class RequestIn(BaseModel):
     purpose: str = ""
     visiting_place: str = ""
     visiting_company: str = ""
-    from_date: Date | None = None
-    to_date: Date | None = None
+    from_date: dt.date | None = None
+    to_date: dt.date | None = None
     destination_city: str = ""
     city_tier: int | None = None  # only needed for non-Tier-1 cities
     category: Literal["domestic", "international"] = "domestic"
@@ -157,8 +158,8 @@ class RequestListItem(BaseModel):
     emp_name: str
     purpose: str
     destination_city: str
-    from_date: Date | None
-    to_date: Date | None
+    from_date: dt.date | None
+    to_date: dt.date | None
     status: str
     estimate_total_paise: int
     advance_requested_paise: int
@@ -205,7 +206,7 @@ class Attendee(BaseModel):
 class ClaimLineIn(BaseModel):
     section: Section
     head: LineHead
-    date: Date | None = None
+    date: dt.date | None = None
     time: str | None = None
     description: str = ""
     merchant: str = ""
@@ -213,8 +214,8 @@ class ClaimLineIn(BaseModel):
     from_place: str | None = None
     to_place: str | None = None
     city: str | None = None
-    check_in: Date | None = None
-    check_out: Date | None = None
+    check_in: dt.date | None = None
+    check_out: dt.date | None = None
     nights: int | None = None
     paid_by: PaidBy = "Employee"
     base_paise: int = Field(default=0, ge=0)
@@ -228,7 +229,7 @@ class ClaimLinePatch(BaseModel):
     """Every field optional; only the ones sent are changed."""
     section: Section | None = None
     head: LineHead | None = None
-    date: Date | None = None
+    date: dt.date | None = None
     time: str | None = None
     description: str | None = None
     merchant: str | None = None
@@ -236,8 +237,8 @@ class ClaimLinePatch(BaseModel):
     from_place: str | None = None
     to_place: str | None = None
     city: str | None = None
-    check_in: Date | None = None
-    check_out: Date | None = None
+    check_in: dt.date | None = None
+    check_out: dt.date | None = None
     nights: int | None = None
     paid_by: PaidBy | None = None
     base_paise: int | None = Field(default=None, ge=0)
@@ -251,7 +252,7 @@ class ClaimLineOut(BaseModel):
     id: int
     section: Section
     head: LineHead
-    date: Date | None
+    date: dt.date | None
     time: str | None
     description: str
     merchant: str
@@ -259,8 +260,8 @@ class ClaimLineOut(BaseModel):
     from_place: str | None
     to_place: str | None
     city: str | None
-    check_in: Date | None
-    check_out: Date | None
+    check_in: dt.date | None
+    check_out: dt.date | None
     nights: int | None
     paid_by: PaidBy
     base_paise: int

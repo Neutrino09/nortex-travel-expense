@@ -25,7 +25,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Nortex Travel Expense", lifespan=lifespan)
 app.add_middleware(SessionMiddleware, secret_key=get_settings().session_secret,
-                   same_site="lax", https_only=False)
+                   same_site="lax", https_only=get_settings().cookie_secure)  # COOKIE_SECURE=true on Render
 
 for r in (auth.router, requests.router, settlements.router, approvals.router,
           finance.router, evidence.router):
