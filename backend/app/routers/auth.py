@@ -4,7 +4,8 @@ from sqlmodel import Session, select
 from ..auth import app_role_for, current_user
 from ..db import get_session
 from ..models import Employee
-from ..schemas import EmployeeOut, LoginIn
+from .. import clock
+from ..schemas import ClockOut, EmployeeOut, LoginIn
 
 router = APIRouter(tags=["auth"])
 
@@ -36,3 +37,9 @@ def logout(request: Request):
 def employees(session: Session = Depends(get_session)):
     """Login picker — no auth needed."""
     return [to_employee_out(e) for e in session.exec(select(Employee).order_by(Employee.emp_code))]
+
+
+@router.get("/clock", response_model=ClockOut)
+def server_clock():
+    """Server 'now' (honours APP_TODAY) so relative times in the UI match the frozen demo date."""
+    return ClockOut(now=clock.now())

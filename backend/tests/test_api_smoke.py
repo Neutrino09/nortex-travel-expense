@@ -42,3 +42,8 @@ def test_full_flow_over_http(login_as):
     assert ravi.post(f"/api/finance/payments/{pay['id']}/mark-paid").status_code == 200
     assert chaitanya.get(f"/api/settlements/{SID}").json()["status"] == "paid"
     assert chaitanya.get("/api/requests/TRQ-2026-0001").json()["stage"]["step_index"] == 5
+
+
+def test_clock_honours_app_today(login_as):
+    c = login_as("NX-4471")
+    assert c.get("/api/clock").json()["now"].startswith("2026-06-22")

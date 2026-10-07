@@ -1,10 +1,16 @@
 // Display-only helpers (no policy logic).
+// 'now' comes from the server clock (APP_TODAY freezes the demo date), not the browser's.
+let offsetMs = 0
+export function setServerNow(iso: string) {
+  offsetMs = new Date(iso).getTime() - Date.now()
+}
+const now = () => Date.now() + offsetMs
 export function daysSince(iso: string | null | undefined): number {
   if (!iso) return 0
-  return Math.max(0, Math.floor((Date.now() - new Date(iso).getTime()) / 86400000))
+  return Math.max(0, Math.floor((now() - new Date(iso).getTime()) / 86400000))
 }
 export function relativeTime(iso: string): string {
-  const s = Math.floor((Date.now() - new Date(iso).getTime()) / 1000)
+  const s = Math.floor((now() - new Date(iso).getTime()) / 1000)
   if (s < 60) return 'just now'
   if (s < 3600) return `${Math.floor(s / 60)} min ago`
   if (s < 86400) return `${Math.floor(s / 3600)} h ago`

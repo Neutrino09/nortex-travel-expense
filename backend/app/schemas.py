@@ -18,6 +18,10 @@ Section = Literal["lodging", "transport", "other"]
 PaidBy = Literal["Employee", "Company"]
 
 
+class ClockOut(BaseModel):
+    now: datetime  # server 'now' (honours APP_TODAY); the UI measures 'n days ago' against this
+
+
 class ErrorOut(BaseModel):
     detail: str
 

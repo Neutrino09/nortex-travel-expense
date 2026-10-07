@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { useMe } from '@/api/client'
+import { useClock, useMe } from '@/api/client'
+import { setServerNow } from '@/lib/helpers'
 import AppShell from '@/components/AppShell'
 import Login from '@/pages/Login'
 import Dashboard from '@/pages/Dashboard'
@@ -13,7 +14,9 @@ import Finance from '@/pages/Finance'
 
 export default function App() {
   const me = useMe()
-  if (me.isLoading) return <div className="p-8 text-zinc-500">Loading…</div>
+  const clock = useClock()
+  if (clock.data) setServerNow(clock.data.now)  // relative times follow the server's (frozen) date
+  if (me.isLoading || clock.isLoading) return <div className="p-8 text-zinc-500">Loading…</div>
   const authed = !!me.data
   return (
     <Routes>

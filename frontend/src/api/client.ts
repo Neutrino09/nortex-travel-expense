@@ -2,7 +2,7 @@
 // Every mutation invalidates the relevant queries. Errors carry the server's `detail` string.
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import type {
-  ActIn, ActOut, ClaimLineIn, ClaimLineOut, ClaimLinePatch, DisburseIn, EmployeeOut, FinanceQueue,
+  ActIn, ActOut, ClaimLineIn, ClockOut, ClaimLineOut, ClaimLinePatch, DisburseIn, EmployeeOut, FinanceQueue,
   ImportResult, InboxItem, PaymentOut, RequestIn, RequestListItem, RequestOut, RequestValidateOut,
   SettlementCreate, SettlementOut, SubmitOut, TimelineEvent, ValidationResult,
 } from './types'
@@ -51,6 +51,8 @@ export const qk = {
 }
 
 // ---- auth ----
+export const useClock = () =>
+  useQuery({ queryKey: ['clock'], queryFn: () => get<ClockOut>('/clock'), staleTime: Infinity })
 export const useMe = () =>
   useQuery({ queryKey: qk.me, queryFn: () => get<EmployeeOut>('/auth/me'), retry: false })
 export const useEmployees = () =>

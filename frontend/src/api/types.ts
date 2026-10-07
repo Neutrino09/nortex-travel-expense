@@ -12,6 +12,10 @@ export type LineHead = 'lodging' | 'cab' | 'air' | 'meals' | 'business_entertain
 export type Section = 'lodging' | 'transport' | 'other'
 export type PaidBy = 'Employee' | 'Company'
 
+export interface ClockOut {
+  now: string // server 'now' (honours APP_TODAY)
+}
+
 export interface ErrorOut {
   detail: string
 }
