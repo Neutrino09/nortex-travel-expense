@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #15803d;
+  --color-primary-foreground: #ffffff;
+  --color-muted: #f4f4f5;
+  --color-muted-foreground: #71717a;
+  --color-border: #e4e4e7;
+}
+
+body { @apply bg-zinc-50 text-zinc-900 antialiased; font-family: ui-sans-serif, system-ui, sans-serif; }
